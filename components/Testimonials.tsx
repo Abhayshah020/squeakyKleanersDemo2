@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -40,7 +40,17 @@ const reviews: Review[] = [
 
 export default function Testimonials() {
     const containerRef = useRef(null);
-    const isInView = useInView(containerRef, { amount: 0.2, once: false });
+    const isInView = useInView(containerRef, {
+        amount: 0.2,
+        once: false,
+        margin: "100px 0px", // triggers earlier on mobile
+    });
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+
+    useEffect(() => {
+        // Ensures hydration completed before checking inView
+        if (isInView) setShouldAnimate(true);
+    }, [isInView]);
 
     return (
         <section className="py-20 bg-gray-50 w-full flex flex-col items-center justify-center overflow-hidden">
@@ -52,10 +62,14 @@ export default function Testimonials() {
                 <div ref={containerRef} className="relative overflow-hidden w-full">
                     <motion.div
                         className="flex gap-3"
-                        initial={{ x: "10%" }}
-                        animate={isInView ? { x: ["10%", "-100%"] } : {}}
+                        initial={{ x: "0%" }}
+                        animate={
+                            shouldAnimate
+                                ? { x: ["00%", "-100%"] }
+                                : { x: "0%" } // stays still if not in view
+                        }
                         transition={
-                            isInView
+                            shouldAnimate
                                 ? {
                                     repeat: Infinity,
                                     repeatType: "loop",
@@ -70,6 +84,7 @@ export default function Testimonials() {
                                 key={idx}
                                 className="max-w-[300px] md:max-w-[400px] bg-white p-6 m-5 flex flex-col items-center justify-center rounded-2xl shadow-lg flex-shrink-0"
                             >
+                                {/* Stars */}
                                 <div className="flex items-center mb-3">
                                     {Array.from({ length: 5 }).map((_, i) => (
                                         <Star
@@ -86,7 +101,11 @@ export default function Testimonials() {
                                         {r.rate.toFixed(1)}
                                     </span>
                                 </div>
+
+                                {/* Review */}
                                 <p className="text-gray-700 mb-4">{r.review}</p>
+
+                                {/* Reviewer */}
                                 <div className="mt-2">
                                     <p className="font-semibold text-gray-900">{r.name}</p>
                                     <p className="text-gray-500 text-sm">{r.position}</p>
