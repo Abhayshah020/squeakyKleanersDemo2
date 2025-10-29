@@ -108,8 +108,8 @@ export default function HeroSection() {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.3 }}
+                            animate={{ opacity: current === index ? 1 : 0 }}
+                            viewport={{ once: false, amount: 0.3 }}
                             transition={{ duration: 1 }}
                             className="absolute inset-0"
                         >
