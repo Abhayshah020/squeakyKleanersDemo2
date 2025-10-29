@@ -39,6 +39,7 @@ export default function WhyChooseUs() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
+                    viewport={{ once: true, amount: 0.4 }}
                     className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
                 >
                     Why Choose <span className="text-blue-600">Squeaky Kleaners</span>
@@ -49,6 +50,7 @@ export default function WhyChooseUs() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.8 }}
+                    viewport={{ once: true, amount: 0.4 }}
                     className="text-gray-700 text-sm sm:text-base md:text-lg mb-12 relative inline-block"
                 >
                     <motion.span
@@ -58,6 +60,7 @@ export default function WhyChooseUs() {
                             backgroundSize: "100% 100%",
                             transition: { duration: 1.2, ease: "easeInOut" },
                         }}
+                        viewport={{ once: true, amount: 0.4 }}
                         style={{
                             backgroundImage: "linear-gradient(120deg, #3b82f6 0%, #60a5fa 100%)",
                             backgroundRepeat: "no-repeat",
@@ -79,6 +82,7 @@ export default function WhyChooseUs() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
+                            viewport={{ once: true, amount: 0.4 }}
                             className="bg-gray-50 rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-lg transition"
                         >
                             <div className="flex items-center gap-3 mb-2 sm:mb-3">

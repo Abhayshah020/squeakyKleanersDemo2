@@ -16,7 +16,7 @@ export default function DownloadAppSection() {
                     className="flex-1 text-center md:text-left"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
@@ -65,7 +65,7 @@ export default function DownloadAppSection() {
                     className="flex-1 flex flex-col items-center justify-center text-center mt-8 md:mt-0"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.4 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">

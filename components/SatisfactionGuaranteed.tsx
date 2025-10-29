@@ -12,6 +12,7 @@ export default function SatisfactionGuaranteed() {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.8 }}
                 className="max-w-6xl px-5 w-full md:w-[70%] md:px-0 flex flex-col md:flex-row items-center gap-6 md:gap-12 relative overflow-hidden"
             >

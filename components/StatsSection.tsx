@@ -19,7 +19,7 @@ export default function StatsSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     className="text-3xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-12"
                 >
                     Our Impact
@@ -32,7 +32,7 @@ export default function StatsSection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.3 }}
                             className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-all"
                         >
                             <Icon className="mx-auto mb-4 text-blue-600" size={36} />

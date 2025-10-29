@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const operationAreas = {
     "Inner West Sydney": [
@@ -33,6 +33,9 @@ const operationAreas = {
 };
 
 export default function WhereWeOperate() {
+    const containerRef = useRef(null);
+    const isInView = useInView(containerRef, { once: false, amount: 0.4 });
+    
     const [activeTab, setActiveTab] = useState<keyof typeof operationAreas>(
         "Inner West Sydney"
     );
@@ -63,29 +66,32 @@ export default function WhereWeOperate() {
                 </div>
 
                 {/* Animated Addresses */}
-                <div className="overflow-hidden relative h-12">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeTab}
-                            animate={{ x: ["0%", "-100%"] }}
-                            transition={{
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                duration: 30, // adjust speed here
-                                ease: "linear",
-                            }}
-                            className="absolute whitespace-nowrap flex gap-6 text-gray-700 font-medium text-lg"
-                        >
-                            {operationAreas[activeTab].map((area, idx) => (
-                                <span
-                                    key={idx}
-                                    className="px-4 py-1 bg-white rounded-full shadow-sm border border-gray-200"
-                                >
-                                    {area}
-                                </span>
-                            ))}
-                        </motion.div>
-                    </AnimatePresence>
+                <div className="overflow-hidden relative h-12" ref={containerRef}>
+                    <motion.div
+                        key={activeTab}
+                        initial={{ x: "10%" }}
+                        animate={isInView ? { x: ["10%", "-100%"] } : {}}
+                        transition={
+                            isInView
+                                ? {
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    duration: 30,
+                                    ease: "linear",
+                                }
+                                : {}
+                        }
+                        className="absolute whitespace-nowrap flex gap-6 text-gray-700 font-medium text-lg"
+                    >
+                        {operationAreas[activeTab].map((area, idx) => (
+                            <span
+                                key={idx}
+                                className="px-4 py-1 bg-white rounded-full shadow-sm border border-gray-200"
+                            >
+                                {area}
+                            </span>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </section>

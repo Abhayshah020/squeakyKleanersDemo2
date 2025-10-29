@@ -71,12 +71,12 @@ const PriceWeOffer: FC = () => {
         <section className="w-full py-16 px-4 md:px-8 bg-gradient-to-b from-slate-50 to-white flex justify-center">
             <div className="w-full md:w-[70%] max-w-7xl">
                 {/* Header */}
-                <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+                <motion.div className="text-center mb-12 md:mb-16" initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6 }}>
                     <motion.p
                         className="text-sm font-semibold text-teal-600 uppercase tracking-widest mb-3"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ delay: 0.1, duration: 0.5 }}
                     >
                         Our Services
@@ -104,7 +104,7 @@ const PriceWeOffer: FC = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                 >
                     {services.map((service, index) => (
                         <motion.div key={index} className="group relative" whileHover="hover">
@@ -126,7 +126,7 @@ const PriceWeOffer: FC = () => {
 
                                 <p className="text-slate-600 text-sm sm:text-base mb-6 flex-grow">{service.description}</p>
 
-                                <motion.div className="space-y-2 mb-6" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                                <motion.div className="space-y-2 mb-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
                                     {service.features.map((feature, featureIndex) => (
                                         <motion.div key={featureIndex} className="flex items-center gap-2 sm:gap-3" custom={featureIndex} variants={featureVariants}>
                                             <motion.div className="flex-shrink-0" whileHover={{ scale: 1.2, rotate: 360 }} transition={{ duration: 0.3 }}>
@@ -150,7 +150,7 @@ const PriceWeOffer: FC = () => {
                 </motion.div>
 
                 {/* Bottom CTA */}
-                <motion.div className="text-center mt-12 md:mt-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
+                <motion.div className="text-center mt-12 md:mt-16" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6, delay: 0.3 }}>
                     <p className="text-slate-600 mb-4">Not sure which service is right for you?</p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}

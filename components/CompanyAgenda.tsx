@@ -12,7 +12,7 @@ export default function CompanyAgenda() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 >
                     Our Agenda
@@ -23,7 +23,7 @@ export default function CompanyAgenda() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1.2 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.3 }}
                     className="text-lg md:text-xl text-gray-700 leading-relaxed mb-12"
                 >
                     At{" "}
@@ -78,7 +78,7 @@ export default function CompanyAgenda() {
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.3 }}
                             className="flex items-start space-x-4"
                         >
                             <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={26} />

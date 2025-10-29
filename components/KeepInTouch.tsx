@@ -30,7 +30,7 @@ export default function KeepInTouch() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.4 }}
                 >
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
                         Keep in <span className="bg-yellow-300 px-2 rounded-md">Touch</span>
@@ -47,7 +47,7 @@ export default function KeepInTouch() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.4 }}
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div>

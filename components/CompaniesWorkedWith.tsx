@@ -29,7 +29,7 @@ export default function CompaniesWorkedWith() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.4 }}
           className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center"
         >
           Companies We’ve Worked With
@@ -38,7 +38,9 @@ export default function CompaniesWorkedWith() {
         <div className="relative w-full overflow-hidden">
           <motion.div
             className="flex gap-12 whitespace-nowrap"
-            animate={{ x: ["0%", "-100%"] }}
+            initial={{ x: ["10%", "-100%"] }}
+            whileInView={{ x: ["10%", "-100%"] }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{
               x: {
                 repeat: Infinity,

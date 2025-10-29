@@ -57,6 +57,7 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
+                    viewport={{ once: true, amount: 0.4 }}
                     className="text-3xl capitalize sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center"
                 >
                     We Provide {" "}
@@ -69,6 +70,7 @@ export default function ServicesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.4 }}
                     className="text-gray-600 text-center mb-12 max-w-full sm:max-w-lg md:max-w-xl"
                 >
                     While we can customize your cleaning plan to suit your needs.
@@ -82,6 +84,7 @@ export default function ServicesSection() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: idx * 0.2 }}
+                            viewport={{ once: true, amount: 0.4 }}
                             className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:scale-102 cursor-pointer transition-transform"
                         >
                             <div className="relative w-28 h-28 sm:w-25 sm:h-25 md:w-30 md:h-30 mb-4">

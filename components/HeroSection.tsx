@@ -28,7 +28,8 @@ export default function HeroSection() {
                     <motion.div
                         key={index}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: current === index ? 1 : 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.3 }} // triggers when 30% visible
                         transition={{ duration: 1 }}
                         className="absolute inset-0"
                     >
@@ -54,8 +55,9 @@ export default function HeroSection() {
                 <div className="relative z-10 max-w-lg text-center md:text-left space-y-4">
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         style={{ lineHeight: 0.95 }}
                         className="text-4xl sm:text-5xl tracking-tighter lg:text-6xl font-[900] text-[#f0a04a] leading-tight"
                     >
@@ -66,7 +68,8 @@ export default function HeroSection() {
 
                     <motion.p
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="text-base sm:text-lg text-gray-500 font-[500] max-w-md mx-auto md:mx-0"
                     >
@@ -76,7 +79,8 @@ export default function HeroSection() {
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                         className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-8"
                     >
@@ -104,7 +108,8 @@ export default function HeroSection() {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0 }}
-                            animate={{ opacity: current === index ? 1 : 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 1 }}
                             className="absolute inset-0"
                         >
